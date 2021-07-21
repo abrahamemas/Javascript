@@ -1,0 +1,20 @@
+header{
+      color: aliceblue;
+      font-size: small;
+      font-family: 'Franklin Gothic Medium', 'Arial Narrow', Arial, sans-serif;
+      text-align: center;
+      font-size: 5rem;
+}
+body {
+     background-image: url("img10.jpg"),
+                       url("img7.jpg"),
+                       url("img9.jpg")
+                       url("img1.jpg");
+     background-size: 200px,400px;
+     background-repeat: no-repeat;
+     background-position: 0px 0px,200px 0px,400px 0px, 600px 0px;
+     background-color: rgba(255, 99, 71, 0.507);
+
+
+
+}
