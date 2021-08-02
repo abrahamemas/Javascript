@@ -78,6 +78,7 @@ else {
     alert (firstname + 'is a man');
 }
 */
+/*
 var firstname = 'Andy';
 var age = 16;
 age >= 18 ? console .log (firstname + 'Drinks beer') //Ternary Operator 
@@ -96,8 +97,9 @@ switch (true) {
        break;
     default :
     console.log (firstname + 'is a man');
-
 }
+*/
+/*
 var player1 = 'John';
 var player2 = 'Mark';
 var player3 = 'Mary';
@@ -126,27 +128,68 @@ function calculateageben (birthyear) {
 }
 var yearben = calculateageben(1945);
 console.log(yearben);
+*/
 
- 
-  
-
+ var skill = function(job,firstname){
+     switch (job){
+         case 'singer' :
+             return firstname + 'sing to people around the world';
+         case 'footballer':
+             return firstname + 'plays football';
+         case 'developer' :
+             return firstname + 'is a programmer'
+        default :
+          return firstname + 'does something else';
+     }
+ }
+  console.log (skill('singer','Ben'));
+  console.log (skill('footballer','Sam'));
+  console.log (skill('retired','Alan'));
    
- 
-     
- 
+var Names = 'john';
+var amount = 124; 48; 268;
+var tip = .2; .15; .1;
+
+var percent = function(amount){
+
+    switch(amount){
+       case (amount < 50):
+        console.log(tip);
+        break;
+       case (amount > 50 && amount < 200):
+        console.log(tip);
+        break;
+        case (amount > 200):
+            console.log(tip);
+            break;
+        default :
+         return tip * amount;
 
 
+    }
+}
+console.log (percent(amount +   + tip));
 
+var Markmass = 48;
+var Markheight = 34;
 
+ var Mark = {
+    
+      calculate: function (bmi){
+        this.bmi = this.Markmass/(this.Markheight* this.Markheight);
+        return this.bmi;
+    }
+        
+ };
+ var John = {
+     mass: 92,
+     height: 77,
+     calculate: function (bmi){
+         this.bmi = this.mass/(this.height * this.height);
+         return this.bmi;
+     }
+ };
 
+ console.log(Mark.calculate);
 
-
-
-
-
-
-
- 
-
-
-
+console.log(John.calculate);
