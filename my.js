@@ -146,7 +146,6 @@ console.log(yearben);
   console.log (skill('footballer','Sam'));
   console.log (skill('retired','Alan'));
    
-var Names = 'john';
 var amount = 124; 48; 268;
 var tip = .2; .15; .1;
 
@@ -170,26 +169,34 @@ var percent = function(amount){
 }
 console.log (percent(amount +   + tip));
 
-var Markmass = 48;
-var Markheight = 34;
+var  Bmi = Markmass = 48;
+var  Bmi = Markheight = 7;
 
- var Mark = {
-    
-      calculate: function (bmi){
+ var Mark = 
+     function (bmi){
         this.bmi = this.Markmass/(this.Markheight* this.Markheight);
         return this.bmi;
-    }
+    };
         
- };
- var John = {
-     mass: 92,
-     height: 77,
-     calculate: function (bmi){
-         this.bmi = this.mass/(this.height * this.height);
-         return this.bmi;
-     }
- };
+var  bmi = Johnmass=  92;
+var  bmi = johnheight = 77;
 
- console.log(Mark.calculate);
+ var john = 
+      function (Bmi){
+         this.Bmi = this.Johnmass/(this.Johnheight * this.Johnheight);
+         return this.Bmi;
+     };
+ 
 
-console.log(John.calculate);
+console.log(Mark(bmi +  + Bmi));
+
+var Bill = [124,48,268,180,42];
+var Tip = .2; .15; .1;
+ 
+var Percent = function(bill){
+    for (var index = 0; index < array.length; index++) {
+        const element = array[index];
+        
+    }
+}
+    
