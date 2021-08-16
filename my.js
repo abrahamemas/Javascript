@@ -129,7 +129,7 @@ function calculateageben (birthyear) {
 var yearben = calculateageben(1945);
 console.log(yearben);
 */
-
+/*
  var skill = function(job,firstname){
      switch (job){
          case 'singer' :
@@ -167,36 +167,121 @@ var percent = function(amount){
 
     }
 }
-console.log (percent(amount +   + tip));
+console.log (percent(amount + ' '  + tip));
+var John = {
+    mass: 10202020,
+    height: 12.6,
+    Bmis: function(){
+        return this.mass / this.height**2
+    } 
+};
+var Mark = {
+    mass: 92,
+    height: 12,
+    Bmis: function(){
+        return this.mass / this.height**2
+    }
+};
 
-var  Bmi = Markmass = 48;
-var  Bmi = Markheight = 7;
+var JohnBMI = John.Bmis();
+var MarkBMI = Mark.Bmis();
 
- var Mark = 
-     function (bmi){
-        this.bmi = this.Markmass/(this.Markheight* this.Markheight);
-        return this.bmi;
-    };
-        
-var  bmi = Johnmass=  92;
-var  bmi = johnheight = 77;
-
- var john = 
-      function (Bmi){
-         this.Bmi = this.Johnmass/(this.Johnheight * this.Johnheight);
-         return this.Bmi;
-     };
- 
-
-console.log(Mark(bmi +  + Bmi));
-
-var Bill = [124,48,268,180,42];
-var Tip = .2; .15; .1;
- 
-var Percent = function(bill){
-    for (var index = 0; index < array.length; index++) {
-        const element = array[index];
-        
+var sumOfBmis = function(){
+    if (MarkBMI > JohnBMI){
+        return 'Mark is the winner'; 
+    } else {
+        return 'John is winner';
     }
 }
+
+console.log(sumOfBmis());
+
+var Emas = {
+    Bills: [124,48,268,180,42],
+    Sumofbill: function(){
+       this.tip = [];
+       this.finalvalue = [];
+       var tip;
+       for (var i = 0; i < this.Bills.length; i++) {
+           const element = this.Bills[i];
+           
+           
+       }
+
+       if (this.Bills < 50){
+           return tip = .2;
+       }else if (this.Bills > 50 && this.Bills < 200){
+           return tip = .15;
+       }else if (this.Bills > 200){
+           return tip = .1;
+       }else {
+           return this.Bills + this.tip;
+       }
+     
     
+
+    
+    }
+}
+
+console.log(Emas.Sumofbill)
+    
+        
+     
+         
+ var sumofNumber_10 = [2+3+4+8];
+ function arrarycalc(arr,fn){
+     var arrRes = []
+     for (var i = 0; i < 2000000; i++) {
+         const element = sumofNumber_10[i];
+         
+     }
+ }*/
+ var scores, roundscores,activeplayers,dice;
+ scores = [0,0];
+ roundscores = 0;
+ activeplayers = 0;
+ document.getElementById('score--0').textContent=0;
+ document.getElementById('score--1').textContent=0;
+ document.getElementById('current--0').textContent=0;
+ document.getElementById('current--1').textConten = 0;
+
+ document.querySelector(".btn--roll").addEventListener('click',function(){
+     var dice = Math.floor(Math.random()*6)+1;
+     var diceDom = document.querySelector('.dice');
+     diceDom.style.display = 'block';
+     diceDom.src = 'dice-'+ dice + '.png';
+     if (dice !== 1){
+         roundscores += dice;
+         document.querySelector('#current--' + activeplayers).textContent = roundscores;
+        
+    
+     }else {
+      activeplayers===0 ? activeplayers = 1 : activeplayers = 0;
+      roundscores=0;
+      document.getElementById('current--0').textContent=0;
+      document.getElementById('current--1').textContent=0
+
+     
+     }
+      document.querySelector(".btn--hold").addEventListener('click',function(){
+      scores[activeplayers] += roundscores;
+      document.querySelector('#score--' + activeplayers).textContent = scores[activeplayers];
+     
+    
+    
+
+
+      })
+
+
+    
+     
+
+
+
+
+
+
+
+ })
