@@ -237,57 +237,88 @@ console.log(Emas.Sumofbill)
          
      }
  }*/
- var scores, roundscores,activeplayer,dice;
+
+ var scores, activeplayer, roundscores, dice, dice2; 
  scores = [0,0];
  roundscores = 0;
  activeplayer = 0;
- document.getElementById('score--0').textContent=0;
- document.getElementById('score--1').textContent=0;
- document.getElementById('current--0').textContent=0;
- document.getElementById('current--1').textContent = 0;
+ TP = dice, dice2;
+ 
 
+    document.getElementById('score--0').textContent = '0';
+    document.getElementById('score--1').textContent = '0';
+    document.getElementById('current--0').textContent = '0';
+    document.getElementById('current--1').textContent = '0';
+    
+
+
+ document.querySelector("#score--"+ activeplayer).style.display = 'block';
  document.querySelector(".btn--roll").addEventListener('click',function(){
-     var dice = Math.floor(Math.random()*6)+1;
-     var diceDom = document.querySelector('.dice');
-     diceDom.style.display = 'block';
-     diceDom.src = 'dice-'+ dice + '.png';
-     if (dice !== 1){
-         roundscores += dice;
-         document.querySelector('#current--' + activeplayer).textContent = roundscores;
-        
-    
-     }else { 
-        newplayer();
-
-     
-     }
-      document.querySelector(".btn--hold").addEventListener('click',function(){
-      scores[activeplayer] += roundscores;
+    dice = Math.floor(Math.random()*6)+1
+     diceDom = document.querySelector('.dice');
+     diceDom.src = 'dice-' + dice + '.png';
+     dice2 = Math.floor(Math.random()*6)+1
+     diceDom2 = document.querySelector('.img');
+     diceDom2.src = 'dice-' + dice2 + '.png';
+     GG = dice + dice2;
+     TP = GG;
+     if (TP === 12 && GG === 12){
+        activeplayer === 0 ? activeplayer = 1 : activeplayer = 0
+        roundscores = 0;
+      document.querySelector('#current--' + activeplayer).textContent = roundscores;
       document.querySelector('#score--' + activeplayer).textContent = scores[activeplayer];
-      var winner;
-      if (scores[activeplayer]>= 30){
-          document.querySelector('#name--'+ activeplayer).textContent = 'WINNER';
-      }else {
-          newplayer ();
-      }
 
-      newplayer();
-    
-    
+     }
+
+     else if (GG !== 6 ){
+          roundscores += GG;
+          document.querySelector('#current--' + activeplayer).textContent = roundscores;
+          
+         
+         
+     }else {
+        activeplayer === 0 ? activeplayer = 1 : activeplayer = 0
+        roundscores = 0;
+        
+     }
+ 
+    })
+    document.querySelector('.btn--hold').addEventListener('click',function(){
+       scores[activeplayer] += roundscores;
+       document.querySelector('#score--' + activeplayer).textContent = scores[activeplayer];        
+       if (scores[activeplayer] >= 100){
+           document.querySelector('#name--' + activeplayer).textContent = 'WINNER';
+
+           
+       }else {
+           
+       }
+       
+      
 
 
-      })
-function newplayer (){
-    activeplayer === 0 ? activeplayer = 1 : activeplayer = 0;
-    roundscores = 0;
-    document.getElementById('current--0').textContent=0;
-    document.getElementById('current--1').textContent = 0;
 
 
-}
-
-    
+    })
+    document.querySelector('.btn--new').addEventListener('click',function(){
      
+        scores = [0,0];
+        roundscores = 0;
+        activeplayer = 0;
+       
+           document.getElementById('score--0').textContent = '0';
+           document.getElementById('score--1').textContent = '0';
+           document.getElementById('current--0').textContent = '0';
+           document.getElementById('current--1').textContent = '0';
+           document.getElementById('name--0').textContent = 'Player 1';
+           document.getElementById('name--1').textContent = 'Player 2';
+     
+    
+
+
+
+
+    })
 
 
 
@@ -295,4 +326,17 @@ function newplayer (){
 
 
 
- })
+
+
+
+
+
+
+
+
+    
+    
+
+
+
+ 
